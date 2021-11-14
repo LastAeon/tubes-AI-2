@@ -24,7 +24,7 @@
    (printout t "worst_perimeter: ")
    (assert (worst_perimeter (read))))
 
-(defrule MAIN::hasil-worst-perimeter
+(defrule MAIN::hasil-worst-pe`0/000000000rimeter
    (worst_perimeter ?w)
    (test (> ?w 114.45))
    =>
@@ -50,7 +50,7 @@
    =>
    (tidak-kanker))
 
-(defrule MAIN::read-mean-radius
+(defrule MAIN::read2-mean-radius
    (perimeter_error ?p)
    (test (<= ?p 1.56))
    =>
@@ -104,7 +104,7 @@
    (printout t "radius_error: ")
    (assert (radius_error (read))))
 
-(defrule MAIN::read-worst-texture
+(defrule MAIN::read2-worst-texture
    (radius_error ?w)
    (test (<= ?w 0.63))
    =>
@@ -156,7 +156,7 @@
    =>
    (kanker))
 
-(defrule MAIN::hasil1-mean-radius
+(defrule MAIN::hasil3-mean-radius
    (mean_radius ?w)
    (test (> ?w 13.45))
    =>
