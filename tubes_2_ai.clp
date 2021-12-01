@@ -137,20 +137,20 @@
    (printout t "mean_radius: ")
    (assert (mean_radius (read))))
 
-(defrule MAIN::read-mean-texture
+(defrule MAIN::read-mean-texture2
    (mean_radius ?w)
    (test (<= ?w 13.45))
    =>
    (printout t "mean_texture: ")
    (assert (mean_texture (read))))
 
-(defrule MAIN::hasil1-mean-texture
+(defrule MAIN::hasil1-mean-texture2
    (mean_texture ?w)
    (test (<= ?w 28.79))
    =>
    (tidak-kanker))
 
-(defrule MAIN::hasil2-mean-texture
+(defrule MAIN::hasil2-mean-texture2
    (mean_texture ?w)
    (test (> ?w 28.79))
    =>
@@ -161,3 +161,62 @@
    (test (> ?w 13.45))
    =>
    (kanker))
+
+(defrule MAIN::read-mean-texture
+   (worst_radius ?w)
+   (test (> ?w 16.83))
+   =>
+   (printout t "mean_texture: ")
+   (assert (mean_texture2 (read)))
+)
+
+(defrule MAIN::read-mean-smoothness
+   (radius_error ?w)
+   (test (> ?w 0.63))
+   =>
+   (printout t "mean_smoothness: ")
+   (assert (mean_smoothness (read)))
+)
+
+(defrule MAIN::hasil1-mean-smoothness
+   (mean_smoothness ?w)
+   (test (<= ?w 0.09))
+   =>
+   (kanker)
+)
+(defrule MAIN::hasil0-mean-smoothness
+   (mean_smoothness ?w)
+   (test (> ?w 0.09))
+   =>
+   (tidak-kanker)
+)
+
+(defrule MAIN::hasil1-mean-texture
+   (mean_texture2 ?w)
+   (test(<= ?w 16.19))
+   =>
+   (kanker) 
+)
+
+(defrule MAIN::read-concave-point-error
+   (mean_texture2 ?w)
+   (test(> ?w 16.19))
+   =>
+   (printout t "concave_point_error: ")
+   (assert (concave_point_error (read)))
+)
+
+(defrule MAIN::hasil1-concave-point-error
+   (concave_point_error ?w)
+   (test(> ?w 0.01))
+   =>
+   (kanker) 
+)
+
+
+(defrule MAIN::hasil0-concave-point-error
+   (concave_point_error ?w)
+   (test(<= ?w 0.01))
+   =>
+   (tidak-kanker) 
+)
