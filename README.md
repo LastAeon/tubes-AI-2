@@ -15,6 +15,6 @@
 
 
 ## Contact
-13519008 - Ronggur Mahendra Widya Putra
-13519149 - Syihabuddin Yahya Muhammad
+13519008 - Ronggur Mahendra Widya Putra \
+13519149 - Syihabuddin Yahya Muhammad \
 13519168 - Nabil nabighah
