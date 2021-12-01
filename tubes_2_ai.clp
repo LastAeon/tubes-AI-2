@@ -55,16 +55,16 @@
    (test (<= ?p 1.56))
    =>
    (printout t "mean_radius: ")
-   (assert (mean_radius (read))))
+   (assert (mean_radius2 (read))))
 
 (defrule MAIN::hasil1-mean-radius
-   (mean_radius ?m)
+   (mean_radius2 ?m)
    (test (<= ?m 13.34))
    =>
    (tidak-kanker))
 
 (defrule MAIN::hasil2-mean-radius
-   (mean_radius ?m)
+   (mean_radius2 ?m)
    (test (> ?m 13.34))
    =>
    (kanker))
@@ -88,7 +88,7 @@
    =>
    (tidak-kanker))
 
-"Bagian kiri, jalan dari kiri juga"
+; "Bagian kiri, jalan dari kiri juga"
 
 (defrule MAIN::read-worst-radius
    (mean_concave_point ?m)
@@ -109,16 +109,16 @@
    (test (<= ?w 0.63))
    =>
    (printout t "worst_texture: ")
-   (assert (radius_error (read))))
+   (assert (worst_texture2 (read))))
 
 (defrule MAIN::hasil1-worst-texture
-   (worst_texture ?w)
+   (worst_texture2 ?w)
    (test (<= ?w 30.15))
    =>
    (kanker))
 
 (defrule MAIN::read-worst-area
-   (worst_texture ?w)
+   (worst_texture2 ?w)
    (test (> ?w 30.15))
    =>
    (printout t "worst_area: ")
